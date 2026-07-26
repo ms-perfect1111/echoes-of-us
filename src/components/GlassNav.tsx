@@ -16,7 +16,7 @@ export const GlassNav = () => {
 
   return (
     <nav className="fixed inset-x-0 top-4 z-50 flex justify-center px-4">
-      <div className="glass-panel flex items-center gap-1 rounded-full px-2 py-2 sm:gap-2 sm:px-3">
+      <div className="glass-panel flex items-center bg-background/55 backdrop-blur-2xl gap-1 rounded-full px-2 py-2 sm:gap-2 sm:px-3">
         {links.map((l) => {
           const gated = l.to === "/gallery" && hydrated && !unlocked;
           return (
