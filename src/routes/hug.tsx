@@ -234,7 +234,7 @@ function HugPage() {
 
       <section className="relative z-10 flex flex-col items-center px-6 py-32 text-center">
         <h2 className="font-display text-[clamp(1.8rem,5vw,3rem)] font-light">
-          That's the one I owe you in person.
+          That's something i owe you but one that i can only do for you virtually.
         </h2>
         <Link
           to="/letter"
