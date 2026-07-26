@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as MazeRouteImport } from './routes/maze'
+import { Route as LetterRouteImport } from './routes/letter'
 import { Route as HugRouteImport } from './routes/hug'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as IndexRouteImport } from './routes/index'
@@ -17,6 +18,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const MazeRoute = MazeRouteImport.update({
   id: '/maze',
   path: '/maze',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LetterRoute = LetterRouteImport.update({
+  id: '/letter',
+  path: '/letter',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HugRoute = HugRouteImport.update({
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/gallery': typeof GalleryRoute
   '/hug': typeof HugRoute
+  '/letter': typeof LetterRoute
   '/maze': typeof MazeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/gallery': typeof GalleryRoute
   '/hug': typeof HugRoute
+  '/letter': typeof LetterRoute
   '/maze': typeof MazeRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,22 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/gallery': typeof GalleryRoute
   '/hug': typeof HugRoute
+  '/letter': typeof LetterRoute
   '/maze': typeof MazeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/gallery' | '/hug' | '/maze'
+  fullPaths: '/' | '/gallery' | '/hug' | '/letter' | '/maze'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/gallery' | '/hug' | '/maze'
-  id: '__root__' | '/' | '/gallery' | '/hug' | '/maze'
+  to: '/' | '/gallery' | '/hug' | '/letter' | '/maze'
+  id: '__root__' | '/' | '/gallery' | '/hug' | '/letter' | '/maze'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   GalleryRoute: typeof GalleryRoute
   HugRoute: typeof HugRoute
+  LetterRoute: typeof LetterRoute
   MazeRoute: typeof MazeRoute
 }
 
@@ -76,6 +86,13 @@ declare module '@tanstack/react-router' {
       path: '/maze'
       fullPath: '/maze'
       preLoaderRoute: typeof MazeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/letter': {
+      id: '/letter'
+      path: '/letter'
+      fullPath: '/letter'
+      preLoaderRoute: typeof LetterRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/hug': {
@@ -106,6 +123,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   GalleryRoute: GalleryRoute,
   HugRoute: HugRoute,
+  LetterRoute: LetterRoute,
   MazeRoute: MazeRoute,
 }
 export const routeTree = rootRouteImport
