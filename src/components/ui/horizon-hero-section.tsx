@@ -540,7 +540,11 @@ export const HorizonHero = () => {
       {/* Side marker */}
       <div
         ref={menuRef}
-        className="invisible fixed top-1/2 left-6 z-30 hidden -translate-y-1/2 flex-col items-center gap-6 md:flex"
+        className="invisible fixed top-1/2 left-6 z-30 hidden -translate-y-1/2 flex-col items-center gap-6 transition-opacity duration-700 md:flex"
+        style={{
+          opacity: scrollProgress > 0.94 ? 0 : 1,
+          pointerEvents: scrollProgress > 0.94 ? "none" : undefined,
+        }}
       >
         <div className="flex flex-col gap-1.5">
           <span className="block h-px w-8 bg-foreground/50" />
@@ -573,7 +577,11 @@ export const HorizonHero = () => {
       {/* Scroll progress indicator */}
       <div
         ref={scrollProgressRef}
-        className="invisible fixed right-6 bottom-8 z-30 flex items-center gap-4"
+        className="invisible fixed right-6 bottom-8 z-30 flex items-center gap-4 transition-opacity duration-700"
+        style={{
+          opacity: scrollProgress > 0.94 ? 0 : 1,
+          pointerEvents: scrollProgress > 0.94 ? "none" : undefined,
+        }}
       >
         <span className="text-[0.6rem] tracking-[0.4em] text-foreground/50 uppercase">
           Scroll

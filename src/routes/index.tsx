@@ -36,7 +36,8 @@ function Index() {
       <HorizonHero />
 
       {/* Journey */}
-      <section className="relative z-10 mx-auto max-w-6xl px-6 py-32">
+      <div className="relative z-10 bg-gradient-to-b from-background/80 via-background/95 to-background backdrop-blur-2xl">
+      <section className="relative z-10 mx-auto max-w-6xl px-6 pt-40 pb-32">
         <p className="text-center text-[0.65rem] tracking-[0.5em] text-foreground/45 uppercase">
           The journey
         </p>
@@ -101,6 +102,7 @@ function Index() {
       <footer className="relative z-10 pb-16 text-center text-[0.6rem] tracking-[0.4em] text-foreground/35 uppercase">
         Made slowly, on purpose, for you
       </footer>
+      </div>
     </main>
   );
 }
