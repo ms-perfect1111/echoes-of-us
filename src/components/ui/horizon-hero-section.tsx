@@ -287,7 +287,7 @@ export const HorizonHero = () => {
             float pulse = sin(time * 2.0) * 0.1 + 0.9;
             atmosphere *= pulse;
 
-            gl_FragColor = vec4(atmosphere, intensity * 0.25);
+            gl_FragColor = vec4(atmosphere, intensity * 0.1);
           }
         `,
         side: THREE.BackSide,
@@ -366,16 +366,16 @@ export const HorizonHero = () => {
       refs.renderer.setSize(window.innerWidth, window.innerHeight);
       refs.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       refs.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-      refs.renderer.toneMappingExposure = 0.5;
+      refs.renderer.toneMappingExposure = 0.4;
 
       refs.composer = new EffectComposer(refs.renderer);
       refs.composer.addPass(new RenderPass(refs.scene, refs.camera));
       refs.composer.addPass(
         new UnrealBloomPass(
           new THREE.Vector2(window.innerWidth, window.innerHeight),
-          0.8,
+          0.45,
           0.4,
-          0.85,
+          0.9,
         ),
       );
 
