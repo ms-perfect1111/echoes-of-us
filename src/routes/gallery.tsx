@@ -18,16 +18,16 @@ import m09 from "@/assets/gallery/memory-09.jpeg.asset.json";
 import m10 from "@/assets/gallery/memory-10.jpeg.asset.json";
 
 const MEMORIES = [
-  { src: m01.url, caption: "The ordinary days that turned out to be the best ones" },
-  { src: m02.url, caption: "Laughing at nothing, for far too long" },
-  { src: m03.url, caption: "Proof that time with you never felt like time" },
-  { src: m04.url, caption: "You, exactly as I always picture you" },
-  { src: m05.url, caption: "A moment I keep going back to" },
-  { src: m06.url, caption: "Everything felt easy here" },
-  { src: m07.url, caption: "Some things are only funny if you were there" },
-  { src: m08.url, caption: "Still my favourite kind of noise" },
-  { src: m09.url, caption: "The world got quiet and good for a second" },
-  { src: m10.url, caption: "Until the next one, and the next one" },
+  { src: m01.url, caption: "THE MOST AMAZING PERSON EVER. MS PERFECTTTTTTTTTT" },
+  { src: m02.url, caption: "Sir Abdur Rehman getting murdered XD" },
+  { src: m03.url, caption: "Would happily accept this heel beating from you ^^" },
+  { src: m04.url, caption: "Chem lectures with mah angelic bestieeeee" },
+  { src: m05.url, caption: "A moment I keep going back to. Pink interior for the pwettiest princess at the pwarty" },
+  { src: m06.url, caption: "I miss these ffc mart runs way too much" },
+  { src: m07.url, caption: "Us and our endless chai spilling XD" },
+  { src: m08.url, caption: "Miss these moments way too much and miss you even more TwT" },
+  { src: m09.url, caption: "Half my head is white: Proof im a nana G" },
+  { src: m10.url, caption: "The pwettiest person eveeeer" },
 ];
 
 export const Route = createFileRoute("/gallery")({
