@@ -9,12 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as MazeRouteImport } from './routes/maze'
 import { Route as LetterRouteImport } from './routes/letter'
 import { Route as HugRouteImport } from './routes/hug'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MazeRoute = MazeRouteImport.update({
   id: '/maze',
   path: '/maze',
@@ -47,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/hug': typeof HugRoute
   '/letter': typeof LetterRoute
   '/maze': typeof MazeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByTo {
   '/hug': typeof HugRoute
   '/letter': typeof LetterRoute
   '/maze': typeof MazeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,13 +70,21 @@ export interface FileRoutesById {
   '/hug': typeof HugRoute
   '/letter': typeof LetterRoute
   '/maze': typeof MazeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/gallery' | '/hug' | '/letter' | '/maze'
+  fullPaths: '/' | '/gallery' | '/hug' | '/letter' | '/maze' | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/gallery' | '/hug' | '/letter' | '/maze'
-  id: '__root__' | '/' | '/gallery' | '/hug' | '/letter' | '/maze'
+  to: '/' | '/gallery' | '/hug' | '/letter' | '/maze' | '/sitemap.xml'
+  id:
+    | '__root__'
+    | '/'
+    | '/gallery'
+    | '/hug'
+    | '/letter'
+    | '/maze'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -77,10 +93,18 @@ export interface RootRouteChildren {
   HugRoute: typeof HugRoute
   LetterRoute: typeof LetterRoute
   MazeRoute: typeof MazeRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/maze': {
       id: '/maze'
       path: '/maze'
@@ -125,6 +149,7 @@ const rootRouteChildren: RootRouteChildren = {
   HugRoute: HugRoute,
   LetterRoute: LetterRoute,
   MazeRoute: MazeRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
