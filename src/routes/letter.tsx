@@ -26,11 +26,11 @@ export const Route = createFileRoute("/letter")({
 });
 
 const PARAGRAPHS = [
-  "I've started this a hundred times in my head and it never comes out right, so I'm just going to say it plainly: I miss you. Not in a dramatic way. In the small, constant way — the kind that shows up in the middle of an ordinary Tuesday when something funny happens and you're the first person I want to tell.",
+  "I've started this a hundred times in my head and it never comes out right, so I'm just going to say it plainly: I miss you. Not in a dramatic way. In the small, constant way, the kind that shows up in the middle of an ordinary Tuesday when something funny happens and you're the first person I want to tell.",
   "You have this way of making the world feel less heavy. You never made me explain myself twice. You laughed at the parts of me I was embarrassed about until they stopped being embarrassing. You remembered the tiny things nobody else bothered to remember, and somehow that made me feel like a whole person.",
-  "I don't think you know how rare that is. People are kind sometimes. You are kind consistently, even when you're tired, even when nobody is watching, even when life is being unfair to you. That's not a personality trait — that's a decision you make over and over, and I've watched you make it.",
+  "I don't think you know how rare that is. People are kind sometimes. You are kind consistently, even when you're tired, even when nobody is watching, even when life is being unfair to you. That's not a personality trait,that's a decision you make over and over, and I've watched you make it.",
   "I'm sorry for the silences. Life got loud and I got distracted, and distance is quietly good at convincing you that people move on. But nothing about you feels far away to me. You're stitched into how I think, how I joke, what I find beautiful. You're in the reflex.",
-  "So here's what I want you to know: you are not a chapter I finished. You're the person I keep saving a seat for. Whatever happens, whoever we become, whatever cities and years get in the way — I'm on your side, permanently, no conditions, no expiry.",
+  "So here's what I want you to know: you are not a chapter I finished. You're the person I keep saving a seat for. Whatever happens, I'm always with you. Your kinght is always here to serve you, your majesty.",
   "Thank you for every hour you gave me. Thank you for being soft when the world wasn't. Thank you for being exactly, specifically you.",
 ];
 
