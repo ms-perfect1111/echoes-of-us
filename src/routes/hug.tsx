@@ -33,7 +33,7 @@ const FRAMES = [
 
 const CAPTIONS = [
   { at: 0.06, text: "Come here." },
-  { at: 0.42, text: "I know it's been a while." },
+  { at: 0.42, text: "A virtual hug i owe you" },
   { at: 0.78, text: "Consider yourself held." },
 ];
 
