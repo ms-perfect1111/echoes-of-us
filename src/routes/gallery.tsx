@@ -6,7 +6,7 @@ import { Starfield } from "@/components/Starfield";
 import { useVault } from "@/lib/vault";
 import { cn } from "@/lib/utils";
 
-import m01 from "@/assets/gallery/WhatsApp Image 2026-07-24 at 10.16.14 PM.jpeg";
+import m01 from "@/assets/gallery/memory-01.jpeg.asset.json";
 import m02 from "@/assets/gallery/memory-02.jpeg.asset.json";
 import m03 from "@/assets/gallery/memory-03.jpeg.asset.json";
 import m04 from "@/assets/gallery/memory-04.jpeg.asset.json";
@@ -18,7 +18,7 @@ import m09 from "@/assets/gallery/memory-09.jpeg.asset.json";
 import m10 from "@/assets/gallery/memory-10.jpeg.asset.json";
 
 const MEMORIES = [
-  { src: @/src/assets/gallery/WhatsApp Image 2026-07-24 at 10.16.14 PM.jpeg, caption: "THE MOST AMAZING PERSON EVER. MS PERFECTTTTTTTTTT" },
+  { src: /WhatsApp Image 2026-07-24 at 10.16.14 PM.jpeg, caption: "THE MOST AMAZING PERSON EVER. MS PERFECTTTTTTTTTT" },
   { src: m02.url, caption: "Sir Abdur Rehman getting murdered XD" },
   { src: m03.url, caption: "Would happily accept this heel beating from you ^^" },
   { src: m04.url, caption: "Chem lectures with mah angelic bestieeeee" },
