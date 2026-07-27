@@ -6,28 +6,22 @@ import { Starfield } from "@/components/Starfield";
 import { useVault } from "@/lib/vault";
 import { cn } from "@/lib/utils";
 
-import m01 from "@/assets/gallery/memory-01.jpeg.asset.json";
-import m02 from "@/assets/gallery/memory-02.jpeg.asset.json";
-import m03 from "@/assets/gallery/memory-03.jpeg.asset.json";
-import m04 from "@/assets/gallery/memory-04.jpeg.asset.json";
-import m05 from "@/assets/gallery/memory-05.jpeg.asset.json";
-import m06 from "@/assets/gallery/memory-06.jpeg.asset.json";
-import m07 from "@/assets/gallery/memory-07.jpeg.asset.json";
-import m08 from "@/assets/gallery/memory-08.jpeg.asset.json";
-import m09 from "@/assets/gallery/memory-09.jpeg.asset.json";
-import m10 from "@/assets/gallery/memory-10.jpeg.asset.json";
-
+// Photos are served as static files from /public so they resolve on any host.
 const MEMORIES = [
-  { src: m01.url, caption: "THE MOST AMAZING PERSON EVER. MS PERFECTTTTTTTTTT" },
-  { src: m02.url, caption: "Sir Abdur Rehman getting murdered XD" },
-  { src: m03.url, caption: "Would happily accept this heel beating from you ^^" },
-  { src: m04.url, caption: "Chem lectures with mah angelic bestieeeee" },
-  { src: m05.url, caption: "A moment I keep going back to. Pink interior for the pwettiest princess at the pwarty" },
-  { src: m06.url, caption: "I miss these ffc mart runs way too much" },
-  { src: m07.url, caption: "Us and our endless chai spilling XD" },
-  { src: m08.url, caption: "Miss these moments way too much and miss you even more TwT" },
-  { src: m09.url, caption: "Half my head is white: Proof im a nana G" },
-  { src: m10.url, caption: "The pwettiest person eveeeer" },
+  { src: "/gallery/01.jpeg", caption: "THE MOST AMAZING PERSON EVER. MS PERFECTTTTTTTTTT" },
+  { src: "/gallery/02.jpeg", caption: "Sir Abdur Rehman getting murdered XD" },
+  { src: "/gallery/03.jpeg", caption: "Would happily accept this heel beating from you ^^" },
+  { src: "/gallery/04.jpeg", caption: "Chem lectures with mah angelic bestieeeee" },
+  {
+    src: "/gallery/05.jpeg",
+    caption:
+      "A moment I keep going back to. Pink interior for the pwettiest princess at the pwarty",
+  },
+  { src: "/gallery/06.jpeg", caption: "I miss these ffc mart runs way too much" },
+  { src: "/gallery/07.jpeg", caption: "Us and our endless chai spilling XD" },
+  { src: "/gallery/08.jpeg", caption: "Miss these moments way too much and miss you even more TwT" },
+  { src: "/gallery/09.jpeg", caption: "Half my head is white: Proof im a nana G" },
+  { src: "/gallery/10.jpeg", caption: "The pwettiest person eveeeer" },
 ];
 
 export const Route = createFileRoute("/gallery")({
