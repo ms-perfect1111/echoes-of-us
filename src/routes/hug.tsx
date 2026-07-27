@@ -3,7 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { GlassNav } from "@/components/GlassNav";
 
-// Dynamically maps files named 01.png up to 22.png from the root public folder
+// Using standard direct public path mapping for root-level files (01.png -> 22.png)
 const FRAMES = Array.from({ length: 22 }, (_, i) => {
   const num = String(i + 1).padStart(2, "0");
   return `/${num}.png`;
