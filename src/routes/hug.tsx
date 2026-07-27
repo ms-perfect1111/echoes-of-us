@@ -3,7 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { GlassNav } from "@/components/GlassNav";
 
-import f01 from "/src/assets/hug/01.png";
+import f01 from "@/assets/hug/hug-01.png.asset.json";
 import f02 from "@/assets/hug/hug-02.png.asset.json";
 import f03 from "@/assets/hug/hug-03.png.asset.json";
 import f04 from "@/assets/hug/hug-04.png.asset.json";
@@ -27,7 +27,7 @@ import f21 from "@/assets/hug/hug-21.png.asset.json";
 import f22 from "@/assets/hug/hug-22.png.asset.json";
 
 const FRAMES = [
-  /src/assets/hug/01.png, f02, f03, f04, f05, f06, f07, f08, f09, f10, f11,
+  f01, f02, f03, f04, f05, f06, f07, f08, f09, f10, f11,
   f12, f13, f14, f15, f16, f17, f18, f19, f20, f21, f22,
 ].map((a) => a.url);
 
