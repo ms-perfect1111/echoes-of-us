@@ -4,8 +4,8 @@ import { ArrowRight } from "lucide-react";
 import { GlassNav } from "@/components/GlassNav";
 
 import f01 from "@/assets/hug/01.png";
-import f02 from "@/assets/hug/hug-02.png.asset.json";
-import f03 from "@/assets/hug/hug-03.png.asset.json";
+import f02 from "@/assets/hug/02.png";
+import f03 from "@/assets/hug/03.png";
 import f04 from "@/assets/hug/hug-04.png.asset.json";
 import f05 from "@/assets/hug/hug-05.png.asset.json";
 import f06 from "@/assets/hug/hug-06.png.asset.json";
