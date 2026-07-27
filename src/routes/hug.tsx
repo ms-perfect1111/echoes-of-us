@@ -3,7 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { GlassNav } from "@/components/GlassNav";
 
-import f01 from "@/assets/hug/hug-01.png.asset.json";
+import f01 from "@/assets/hug/01.png";
 import f02 from "@/assets/hug/hug-02.png.asset.json";
 import f03 from "@/assets/hug/hug-03.png.asset.json";
 import f04 from "@/assets/hug/hug-04.png.asset.json";
