@@ -18,7 +18,7 @@ import m09 from "@/assets/gallery/memory-09.jpeg.asset.json";
 import m10 from "@/assets/gallery/memory-10.jpeg.asset.json";
 
 const MEMORIES = [
-  { src: m01.url, caption: "THE MOST AMAZING PERSON EVER. MS PERFECTTTTTTTTTT" },
+  { src: src/assets/gallery/WhatsApp Image 2026-07-24 at 10.16.14 PM.jpeg, caption: "THE MOST AMAZING PERSON EVER. MS PERFECTTTTTTTTTT" },
   { src: m02.url, caption: "Sir Abdur Rehman getting murdered XD" },
   { src: m03.url, caption: "Would happily accept this heel beating from you ^^" },
   { src: m04.url, caption: "Chem lectures with mah angelic bestieeeee" },
