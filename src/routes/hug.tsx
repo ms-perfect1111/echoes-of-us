@@ -29,7 +29,7 @@ import f22 from "@/assets/hug/hug-22.png.asset.json";
 const FRAMES = [
   f01, f02, f03, f04, f05, f06, f07, f08, f09, f10, f11,
   f12, f13, f14, f15, f16, f17, f18, f19, f20, f21, f22,
-].map((a) => a.png);
+].map((a) => a.url);
 
 const CAPTIONS = [
   { at: 0.06, text: "Come here." },
