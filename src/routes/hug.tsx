@@ -3,33 +3,11 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { GlassNav } from "@/components/GlassNav";
 
-import f01 from "@/assets/hug/hug-01.png.asset.json";
-import f02 from "@/assets/hug/hug-02.png.asset.json";
-import f03 from "@/assets/hug/hug-03.png.asset.json";
-import f04 from "@/assets/hug/hug-04.png.asset.json";
-import f05 from "@/assets/hug/hug-05.png.asset.json";
-import f06 from "@/assets/hug/hug-06.png.asset.json";
-import f07 from "@/assets/hug/hug-07.png.asset.json";
-import f08 from "@/assets/hug/hug-08.png.asset.json";
-import f09 from "@/assets/hug/hug-09.png.asset.json";
-import f10 from "@/assets/hug/hug-10.png.asset.json";
-import f11 from "@/assets/hug/hug-11.png.asset.json";
-import f12 from "@/assets/hug/hug-12.png.asset.json";
-import f13 from "@/assets/hug/hug-13.png.asset.json";
-import f14 from "@/assets/hug/hug-14.png.asset.json";
-import f15 from "@/assets/hug/hug-15.png.asset.json";
-import f16 from "@/assets/hug/hug-16.png.asset.json";
-import f17 from "@/assets/hug/hug-17.png.asset.json";
-import f18 from "@/assets/hug/hug-18.png.asset.json";
-import f19 from "@/assets/hug/hug-19.png.asset.json";
-import f20 from "@/assets/hug/hug-20.png.asset.json";
-import f21 from "@/assets/hug/hug-21.png.asset.json";
-import f22 from "@/assets/hug/hug-22.png.asset.json";
-
-const FRAMES = [
-  f01, f02, f03, f04, f05, f06, f07, f08, f09, f10, f11,
-  f12, f13, f14, f15, f16, f17, f18, f19, f20, f21, f22,
-].map((a) => a.url);
+// Dynamically maps files named 01.png up to 22.png from the root public folder
+const FRAMES = Array.from({ length: 22 }, (_, i) => {
+  const num = String(i + 1).padStart(2, "0");
+  return `/${num}.png`;
+});
 
 const CAPTIONS = [
   { at: 0.06, text: "Come here." },
@@ -88,7 +66,10 @@ function HugPage() {
         done();
       } else {
         img.onload = done;
-        img.onerror = done;
+        img.onerror = () => {
+          console.error(`Failed to load image: ${src}`);
+          done(); // Prevent hanging if an image fails
+        };
       }
       return img;
     });
