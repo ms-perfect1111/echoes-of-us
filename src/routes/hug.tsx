@@ -3,12 +3,33 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { GlassNav } from "@/components/GlassNav";
 
-// Images are loose directly in the public folder, named 01.png ... 22.png
-const FRAME_COUNT = 22;
-const FRAMES = Array.from({ length: FRAME_COUNT }, (_, i) => {
-  const num = String(i + 1).padStart(2, "0");
-  return `/${num}.png`;
-});
+import f01 from "@/assets/hug/hug-01.png.asset.json";
+import f02 from "@/assets/hug/hug-02.png.asset.json";
+import f03 from "@/assets/hug/hug-03.png.asset.json";
+import f04 from "@/assets/hug/hug-04.png.asset.json";
+import f05 from "@/assets/hug/hug-05.png.asset.json";
+import f06 from "@/assets/hug/hug-06.png.asset.json";
+import f07 from "@/assets/hug/hug-07.png.asset.json";
+import f08 from "@/assets/hug/hug-08.png.asset.json";
+import f09 from "@/assets/hug/hug-09.png.asset.json";
+import f10 from "@/assets/hug/hug-10.png.asset.json";
+import f11 from "@/assets/hug/hug-11.png.asset.json";
+import f12 from "@/assets/hug/hug-12.png.asset.json";
+import f13 from "@/assets/hug/hug-13.png.asset.json";
+import f14 from "@/assets/hug/hug-14.png.asset.json";
+import f15 from "@/assets/hug/hug-15.png.asset.json";
+import f16 from "@/assets/hug/hug-16.png.asset.json";
+import f17 from "@/assets/hug/hug-17.png.asset.json";
+import f18 from "@/assets/hug/hug-18.png.asset.json";
+import f19 from "@/assets/hug/hug-19.png.asset.json";
+import f20 from "@/assets/hug/hug-20.png.asset.json";
+import f21 from "@/assets/hug/hug-21.png.asset.json";
+import f22 from "@/assets/hug/hug-22.png.asset.json";
+
+const FRAMES = [
+  f01, f02, f03, f04, f05, f06, f07, f08, f09, f10, f11,
+  f12, f13, f14, f15, f16, f17, f18, f19, f20, f21, f22,
+].map((a) => a.url);
 
 const CAPTIONS = [
   { at: 0.06, text: "Come here." },
@@ -63,14 +84,11 @@ function HugPage() {
         setLoaded(count);
         if (count === FRAMES.length) setReady(true);
       };
-      if (img.complete && img.naturalWidth) {
+      if (img.complete) {
         done();
       } else {
         img.onload = done;
-        img.onerror = (e) => {
-          console.error("Failed to load frame:", src, e);
-          done(); // still count it so we don't hang forever
-        };
+        img.onerror = done;
       }
       return img;
     });
@@ -155,6 +173,7 @@ function HugPage() {
         <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#07070f]">
           <canvas ref={canvasRef} className="block h-full w-full" />
 
+          {/* Vignette + glass grade */}
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0"
@@ -164,6 +183,7 @@ function HugPage() {
             }}
           />
 
+          {/* Loading veil */}
           {!ready && (
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 bg-background/90 backdrop-blur-xl">
               <p className="font-display text-3xl font-light text-halo">Getting closer…</p>
@@ -179,6 +199,7 @@ function HugPage() {
             </div>
           )}
 
+          {/* Scroll-linked captions */}
           {ready &&
             CAPTIONS.map((c) => {
               const d = Math.abs(progress - c.at);
