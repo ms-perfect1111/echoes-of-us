@@ -18,14 +18,17 @@ export const GlassNav = () => {
     <nav className="fixed inset-x-0 top-4 z-50 flex justify-center px-4">
       <div className="glass-panel flex items-center bg-background/55 backdrop-blur-2xl gap-1 rounded-full px-2 py-2 sm:gap-2 sm:px-3">
         {links.map((l) => {
-          const gated = l.to === "/gallery" && hydrated && !unlocked;
+          const gated = l.to === "/gallery" && (!hydrated || !unlocked);
           return (
             <Link
               key={l.to}
-              to={l.to}
+              to={gated ? "/maze" : l.to}
+              aria-disabled={gated || undefined}
+              title={gated ? "Locked — solve the maze first" : undefined}
               activeProps={{ className: "text-foreground bg-white/10" }}
               className={cn(
                 "relative rounded-full px-3 py-1.5 text-[0.68rem] tracking-[0.22em] text-foreground/60 uppercase transition-all duration-300 hover:bg-white/10 hover:text-foreground sm:text-[0.72rem]",
+                gated && "opacity-50",
               )}
             >
               <span className="flex items-center gap-1.5">
